@@ -6,4 +6,9 @@ const app = new Vue({
     message: 'Hello Vue.js!',
     list: ['りんご', 'ばなな', 'いちご'],
   },
+  methods: {
+    handleClick: function(event) {
+      alert(event.target);
+    },
+  },
 });
