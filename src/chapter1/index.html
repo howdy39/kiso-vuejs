@@ -7,7 +7,7 @@
 </head>
 <body>
   <div id="app">
-    <p>{{message}}</p>
+    <p v-if="message.length > 0">{{message}}</p>
     <input type="text" v-model="message">
     <ol>
       <li v-for="item in list">{{item}}</li>
