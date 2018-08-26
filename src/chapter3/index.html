@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue.js App</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div id="app">
+    <img src="https://techthetoaster.org/assets/techthetoaster@2x.png" @load="show=true" :class="{hide: !show}" width="200px">
+    <h1>{{text}}</h1>
+    <input type="text" v-model="text"><br>
+    <input type="text" v-model.lazy="text"><br>
+    <input type="text" v-model.number="text"><br>
+    <input type="text" v-model.trim="text"><br>
+    
+    {{scrollY}}
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
