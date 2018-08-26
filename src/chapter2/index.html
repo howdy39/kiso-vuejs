@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue.js App</title>
+  <link rel="stylesheet" href="main.css">
+  <style>
+    .tuyoi {
+      font-size: 1.4em;
+    }
+    @keyframes cloak-in {
+      0% { opacity: 0; }
+    }
+    #app {
+      animation: cloak-in 1s;
+    }
+    #app[v-cloak] {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" v-cloak>
+    名前 <input v-model="name">
+    <button v-on:click="doAdd">モンスターを追加</button>
+    
+    <ul>
+      <li v-for="(item, index) in list"
+          v-bind:key="item.id"
+          v-bind:class="{tuyoi: item.hp > 300}">
+        {{index}} Id.{{item.id}} {{item.name}} {{item.hp}}
+        <span v-if="item.hp > 300">つよい</span>
+        <button v-on:click="doRemove(index)">削除</button>
+      </li>
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
